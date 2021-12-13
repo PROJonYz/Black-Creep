@@ -1,5 +1,5 @@
 # Black Creep v0.1.7
-# Releases:
+- Releases:
 https://github.com/PROJonYz/TuotantoVersio/releases
-# Play Now In Browser:
+- Play Now:
 https://projonyz.itch.io/black-creep
