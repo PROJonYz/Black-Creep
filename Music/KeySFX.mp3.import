@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/KeySFX.mp3-880d4fb0be9262519c55f632c202b722.mp3str"
+
+[deps]
+
+source_file="res://Music/KeySFX.mp3"
+dest_files=[ "res://.import/KeySFX.mp3-880d4fb0be9262519c55f632c202b722.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
