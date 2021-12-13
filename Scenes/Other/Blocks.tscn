@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Music/Try Again.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Assets/Blocks/Block2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Blocks/Block4.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Blocks/Block3.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/Other/Blocks.gd" type="Script" id=5]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 5, 5 )
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "Blocks",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5, 5 )
+
+[node name="Blocks" type="Area2D"]
+script = ExtResource( 5 )
+
+[node name="Static" type="StaticBody2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="Static"]
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Blocks"
+
+[node name="Col" type="CollisionShape2D" parent="."]
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="SwitchBad" type="Timer" parent="."]
+
+[node name="SwitchGood" type="Timer" parent="."]
+
+[node name="TryAgainTimer" type="Timer" parent="."]
+
+[node name="TryAgain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Blocks_body_entered"]
+[connection signal="timeout" from="SwitchBad" to="." method="_on_SwitchBad_timeout"]
+[connection signal="timeout" from="SwitchGood" to="." method="_on_SwitchGood_timeout"]
+[connection signal="timeout" from="TryAgainTimer" to="." method="_on_TryAgainTimer_timeout"]

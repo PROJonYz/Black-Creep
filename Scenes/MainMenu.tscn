@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Music/MenuMusic.mp3" type="AudioStream" id=1]
 
 [node name="MainMenu" type="Node2D"]
 
@@ -52,3 +54,6 @@ __meta__ = {
 [node name="Line1" type="Sprite" parent="BG/Controls"]
 
 [node name="Line2" type="Sprite" parent="BG/Controls"]
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
