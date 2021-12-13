@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/KEY.png-4235b27bd53c07c221fb211c7c3dacb8.stex"
+path="res://.import/BG.png-ff71d2ba017526de08d751681e190983.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Key/KEY.png"
-dest_files=[ "res://.import/KEY.png-4235b27bd53c07c221fb211c7c3dacb8.stex" ]
+source_file="res://Background/BG.png"
+dest_files=[ "res://.import/BG.png-ff71d2ba017526de08d751681e190983.stex" ]
 
 [params]
 

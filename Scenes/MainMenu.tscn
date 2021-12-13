@@ -1,0 +1,54 @@
+[gd_scene format=2]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+
+[node name="Cam" type="Camera2D" parent="."]
+position = Vector2( 124, 72 )
+current = true
+zoom = Vector2( 0.25, 0.27 )
+
+[node name="Play" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Sprite" parent="Play"]
+
+[node name="PlayText" type="Sprite" parent="Play"]
+
+[node name="Exit" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Sprite" parent="Exit"]
+
+[node name="ExitText" type="Sprite" parent="Exit"]
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+
+[node name="BG" type="AnimationPlayer" parent="."]
+
+[node name="Controls" type="Node" parent="BG"]
+
+[node name="Player" type="Sprite" parent="BG/Controls"]
+
+[node name="GameName" type="Sprite" parent="BG/Controls"]
+
+[node name="Controls" type="Sprite" parent="BG/Controls"]
+
+[node name="A" type="Sprite" parent="BG/Controls"]
+
+[node name="D" type="Sprite" parent="BG/Controls"]
+
+[node name="Space" type="Sprite" parent="BG/Controls"]
+
+[node name="Line1" type="Sprite" parent="BG/Controls"]
+
+[node name="Line2" type="Sprite" parent="BG/Controls"]
