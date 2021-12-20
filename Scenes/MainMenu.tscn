@@ -1,10 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Music/MenuMusic.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Assets/UI/BGMain.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UI/Play.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UI/PlayText.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UI/Exit.png" type="Texture" id=5]
+[ext_resource path="res://Assets/UI/ExitText.png" type="Texture" id=6]
+[ext_resource path="res://Assets/UI/BlackCreepMain.png" type="Texture" id=7]
+[ext_resource path="res://Assets/UI/GameName.png" type="Texture" id=8]
+[ext_resource path="res://Scenes/MainMenu.gd" type="Script" id=9]
+[ext_resource path="res://Assets/UI/Controls.png" type="Texture" id=10]
+[ext_resource path="res://Assets/UI/a.png" type="Texture" id=11]
+[ext_resource path="res://Assets/UI/d.png" type="Texture" id=12]
+[ext_resource path="res://Assets/UI/space.png" type="Texture" id=13]
+[ext_resource path="res://Assets/UI/line.png" type="Texture" id=14]
 
 [node name="MainMenu" type="Node2D"]
+script = ExtResource( 9 )
 
 [node name="Background" type="Sprite" parent="."]
+position = Vector2( 124, 72 )
+scale = Vector2( 7.979, 5.047 )
+z_index = -1
+texture = ExtResource( 2 )
 
 [node name="Cam" type="Camera2D" parent="."]
 position = Vector2( 124, 72 )
@@ -12,26 +30,40 @@ current = true
 zoom = Vector2( 0.25, 0.27 )
 
 [node name="Play" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_left = 184.0
+margin_top = 36.0
+margin_right = 216.0
+margin_bottom = 68.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Play" type="Sprite" parent="Play"]
+position = Vector2( 16, 16 )
+scale = Vector2( 4.25, 4.25 )
+texture = ExtResource( 3 )
 
 [node name="PlayText" type="Sprite" parent="Play"]
+position = Vector2( 16, -8 )
+texture = ExtResource( 4 )
 
 [node name="Exit" type="Button" parent="."]
-margin_right = 12.0
-margin_bottom = 20.0
+margin_left = 184.0
+margin_top = 92.0
+margin_right = 216.0
+margin_bottom = 124.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Exit" type="Sprite" parent="Exit"]
+position = Vector2( 16, 16 )
+scale = Vector2( 4.25, 4.25 )
+texture = ExtResource( 5 )
 
 [node name="ExitText" type="Sprite" parent="Exit"]
+position = Vector2( 16, -12 )
+texture = ExtResource( 6 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
 
@@ -40,20 +72,50 @@ __meta__ = {
 [node name="Controls" type="Node" parent="BG"]
 
 [node name="Player" type="Sprite" parent="BG/Controls"]
+position = Vector2( 68, 88 )
+scale = Vector2( 9.75, 9.75 )
+texture = ExtResource( 7 )
 
 [node name="GameName" type="Sprite" parent="BG/Controls"]
+modulate = Color( 1, 0, 0.470588, 1 )
+position = Vector2( 108, 45.776 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 8 )
 
 [node name="Controls" type="Sprite" parent="BG/Controls"]
+modulate = Color( 1, 0, 0.470588, 1 )
+position = Vector2( 132, 85 )
+texture = ExtResource( 10 )
 
 [node name="A" type="Sprite" parent="BG/Controls"]
+position = Vector2( 104, 99 )
+texture = ExtResource( 11 )
 
 [node name="D" type="Sprite" parent="BG/Controls"]
+position = Vector2( 122, 99 )
+texture = ExtResource( 12 )
 
 [node name="Space" type="Sprite" parent="BG/Controls"]
+position = Vector2( 152, 102.5 )
+scale = Vector2( 2, 2.313 )
+texture = ExtResource( 13 )
 
 [node name="Line1" type="Sprite" parent="BG/Controls"]
+position = Vector2( 112, 99 )
+scale = Vector2( 1.5, 2 )
+texture = ExtResource( 14 )
 
 [node name="Line2" type="Sprite" parent="BG/Controls"]
+position = Vector2( 130, 99 )
+scale = Vector2( 1.5, 2 )
+texture = ExtResource( 14 )
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+
+[connection signal="mouse_entered" from="Play" to="." method="_on_Play_mouse_entered"]
+[connection signal="mouse_exited" from="Play" to="." method="_on_Play_mouse_exited"]
+[connection signal="pressed" from="Play" to="." method="_on_Play_pressed"]
+[connection signal="mouse_entered" from="Exit" to="." method="_on_Exit_mouse_entered"]
+[connection signal="mouse_exited" from="Exit" to="." method="_on_Exit_mouse_exited"]
+[connection signal="pressed" from="Exit" to="." method="_on_Exit_pressed"]

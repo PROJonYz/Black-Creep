@@ -11,5 +11,5 @@ dest_files=[ "res://.import/KeySFX.mp3-880d4fb0be9262519c55f632c202b722.mp3str" 
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/Thx For Playing.mp3-a65f807dbbb0ba32d453deffe3fc76e1
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
