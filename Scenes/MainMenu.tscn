@@ -112,6 +112,7 @@ texture = ExtResource( 14 )
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 1 )
+autoplay = true
 
 [connection signal="mouse_entered" from="Play" to="." method="_on_Play_mouse_entered"]
 [connection signal="mouse_exited" from="Play" to="." method="_on_Play_mouse_exited"]
