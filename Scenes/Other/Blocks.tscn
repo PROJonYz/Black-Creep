@@ -18,7 +18,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 5, 5 )
+extents = Vector2( 4, 4 )
 
 [node name="Blocks" type="Area2D" groups=[
 "Blocks",
@@ -36,6 +36,7 @@ frames = SubResource( 2 )
 animation = "Blocks"
 
 [node name="Col" type="CollisionShape2D" parent="."]
+rotation = 3.14159
 shape = SubResource( 3 )
 one_way_collision = true
 
@@ -56,3 +57,4 @@ stream = ExtResource( 1 )
 [connection signal="timeout" from="SwitchBad" to="." method="_on_SwitchBad_timeout"]
 [connection signal="timeout" from="SwitchGood" to="." method="_on_SwitchGood_timeout"]
 [connection signal="timeout" from="TryAgainTimer" to="." method="_on_TryAgainTimer_timeout"]
+[connection signal="finished" from="TryAgain" to="." method="_on_TryAgain_finished"]

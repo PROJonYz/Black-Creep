@@ -3,6 +3,7 @@ extends Area2D
 func _on_Blocks_body_entered(body):
 	if body.is_in_group("Player") and $Sprite.frame == 2:
 		$TryAgain.playing = true
+		body.die()
 		$TryAgainTimer.start()
 
 func _on_SwitchBad_timeout():

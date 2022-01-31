@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Other/Key.tscn" type="PackedScene" id=2]
@@ -111,6 +111,38 @@ points = PoolVector2Array( 0, 0, 8, 0, 8, 8, 0, 8 )
 } ]
 3/z_index = 0
 
+[sub_resource type="Animation" id=6]
+resource_name = "BG"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 2.2, 1, 2.2 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -5 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Level"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Anim/Level1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1.7, 4.4 ),
+"update": 0,
+"values": [ Vector2( 132, 0 ), Vector2( 132, 112 ) ]
+}
+
 [node name="Level1" type="Node2D"]
 script = ExtResource( 5 )
 
@@ -127,8 +159,11 @@ tile_data = PoolIntArray( 65535, 0, 0, 24, 0, 0, 131071, 0, 0, 65560, 0, 0, 1966
 position = Vector2( 96, 40 )
 
 [node name="BG" type="ParallaxBackground" parent="."]
+offset = Vector2( 0, -0.0893285 )
+transform = Transform2D( 1, 0, 0, 1, 0, -0.0893285 )
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="BG"]
+z_index = -2
 motion_mirroring = Vector2( 96, 0 )
 
 [node name="Sprite" type="Sprite" parent="BG/ParallaxLayer"]
@@ -138,6 +173,7 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 9 )
 
 [node name="Anim" type="AnimationPlayer" parent="BG/ParallaxLayer"]
+anims/BG = SubResource( 6 )
 
 [node name="Tiles" type="Node" parent="."]
 
@@ -160,14 +196,16 @@ position = Vector2( 156, 68 )
 position = Vector2( 172, 68 )
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-
-[node name="Back" type="Sprite" parent="Anim"]
-position = Vector2( 133, 0 )
-texture = ExtResource( 12 )
+anims/Level = SubResource( 7 )
 
 [node name="Level1" type="Sprite" parent="Anim"]
 position = Vector2( 132, 0 )
 texture = ExtResource( 11 )
+
+[node name="Back" type="Sprite" parent="Anim/Level1"]
+position = Vector2( 1, 0 )
+z_index = -1
+texture = ExtResource( 12 )
 
 [node name="Level1" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )

@@ -8,6 +8,9 @@ func _ready():
 	pass
 	
 func _physics_process(delta):
+	if not $Sprite.visible:
+		return
+	
 	vel.x = 0
 	
 	if Input.is_action_pressed("Left"):
@@ -40,3 +43,8 @@ func _on_Hitbox_body_entered(body):
 	
 func _on_Switch_timeout():
 	Global.key_is_picked = true
+	
+func die():
+	$Sprite.visible = false
+	$DeathFX.emitting = true
+	

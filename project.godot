@@ -10,9 +10,10 @@ config_version=4
 
 [application]
 
-config/name="TuotantoVersio"
+config/name="TuotantoVersio (Black Creep)"
 run/main_scene="res://Scenes/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://game icon.png"
+config/windows_native_icon="res://game.ico"
 
 [autoload]
 
