@@ -4,4 +4,5 @@ https://github.com/PROJonYz/TuotantoVersio/releases
 - Play Now:
 https://projonyz.itch.io/black-creep
 - Download:
-https://drive.google.com/drive/folders/1heUFo8KhmiG429wSgo_9mc2t_9tr1Jdv?usp=sharing
+Game: https://drive.google.com/uc?export=download&id=1TGIUec6IhMWYvFW5ZP6GhwCDtmt9gC55
+PCK File For Game: https://drive.google.com/uc?export=download&id=19WhZIKnpV9mk9tUBMRURYq0LywyCEHAl
