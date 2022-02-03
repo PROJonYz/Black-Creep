@@ -48,3 +48,6 @@ func die():
 	$Sprite.visible = false
 	$DeathFX.emitting = true
 	
+func win():
+	$Sprite.visible = false
+	$VictoryFX.emitting = true

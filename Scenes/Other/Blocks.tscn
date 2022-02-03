@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Music/Try Again.mp3" type="AudioStream" id=1]
 [ext_resource path="res://Assets/Blocks/Block2.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 4, 4 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 4, 1 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -31,6 +34,12 @@ script = ExtResource( 5 )
 shape = SubResource( 1 )
 one_way_collision = true
 
+[node name="OnBlock" type="Area2D" parent="."]
+
+[node name="Col" type="CollisionShape2D" parent="OnBlock"]
+position = Vector2( 0, -5 )
+shape = SubResource( 4 )
+
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
 animation = "Blocks"
@@ -41,11 +50,11 @@ shape = SubResource( 3 )
 one_way_collision = true
 
 [node name="SwitchBad" type="Timer" parent="."]
-wait_time = 1.75
+wait_time = 0.75
 autostart = true
 
 [node name="SwitchGood" type="Timer" parent="."]
-wait_time = 1.75
+wait_time = 0.75
 autostart = true
 
 [node name="TryAgainTimer" type="Timer" parent="."]
@@ -54,7 +63,7 @@ autostart = true
 stream = ExtResource( 1 )
 
 [connection signal="body_entered" from="." to="." method="_on_Blocks_body_entered"]
+[connection signal="body_entered" from="OnBlock" to="." method="_on_OnBlock_body_entered"]
 [connection signal="timeout" from="SwitchBad" to="." method="_on_SwitchBad_timeout"]
 [connection signal="timeout" from="SwitchGood" to="." method="_on_SwitchGood_timeout"]
 [connection signal="timeout" from="TryAgainTimer" to="." method="_on_TryAgainTimer_timeout"]
-[connection signal="finished" from="TryAgain" to="." method="_on_TryAgain_finished"]

@@ -16,3 +16,9 @@ func _on_SwitchGood_timeout():
 
 func _on_TryAgainTimer_timeout():
 	get_tree().reload_current_scene()
+
+func _on_OnBlock_body_entered(body):
+	if body.is_in_group("Player") and $Sprite.frame == 2:
+		$TryAgain.playing = true
+		body.die()
+		$TryAgainTimer.start()

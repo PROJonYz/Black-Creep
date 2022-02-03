@@ -5,4 +5,5 @@ func _ready():
 
 func _on_Hit_body_entered(body):
 	if body.is_in_group("Player"):
+		body.win()
 		queue_free()
